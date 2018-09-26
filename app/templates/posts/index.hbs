@@ -1,0 +1,9 @@
+<ul class="list-group">
+  {{#each model as |item|}}
+    <li class="list-group-item">
+      {{#link-to 'posts.post' item class='post'}}
+        {{item.title}}: {{item.body}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
