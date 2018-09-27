@@ -13,12 +13,14 @@
       </button>
     </nav>
 
-    <div class="container">
-      {{outlet "sidebarContent"}}
-    </div>
-    <div class="sidebar-tab-controls">
-      <button type="button" class="btn btn-light" {{action burger.state.actions.toggle}}>&laquo;&raquo;</button>
-    </div>
+    {{#if shouldShowGlobalNavBar}}
+      <div class="sidebar-content">
+        {{outlet "sidebarContent"}}
+        <div class="sidebar-tab-controls">
+          <button type="button" class="btn btn-light" {{action burger.state.actions.toggle}}>&laquo;&raquo;</button>
+        </div>
+      </div>
+    {{/if}}
   {{/burger.menu}}
   {{#burger.outlet}}
     {{!-- main content goes here --}}
