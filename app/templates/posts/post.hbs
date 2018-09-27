@@ -1,4 +1,11 @@
-<div class="post">
-  <p><strong>{{model.title}}</strong></p>
-  <p>{{model.body}}</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      {{model.title}}
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{model.body}}</p>
+      {{#link-to "posts" class="btn btn-link"}}&lt; Back to posts{{/link-to}}
+    </div>
+  </div>
 </div>

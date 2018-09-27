@@ -12,6 +12,7 @@ Router.map(function() {
       path: '/:post_id'
     });
   });
+  this.route('layout');
 });
 
 export default Router;
