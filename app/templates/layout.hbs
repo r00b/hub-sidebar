@@ -1,3 +1,48 @@
-<div class="container-fluid">
-  <h1>this is the layout route</h1>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button {{action "toggleSidebar"}} class="btn btn-light">Menu</button>
+      </li>
+      <li class="nav-item">
+        {{link-to "Home" "index" class="nav-link"}}
+      </li>
+      <li class="nav-item">
+        {{link-to "Posts" "posts" class="nav-link"}}
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+{{#burger-menu
+  open=sidebarIsOpen
+  animation='squeeze'
+  translucentOverlay=false
+  dismissOnClick=false
+  width=500
+  as |burger|}}
+  {{#burger.menu itemTagName="li" as |menu|}}
+    {{!-- this could be a named outlet or an ember from-elsewhere --}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button {{action burger.state.actions.close}} class="close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </nav>
+
+    <div class="container">
+      {{!-- we don't have to use an outlet here - we could just drop stuff right in here --}}
+      {{!-- {{outlet "sidebarContent"}} --}}
+      layout sidebar content goes here!
+    </div>
+  {{/burger.menu}}
+
+  {{#burger.outlet}}
+    <div class="container-fluid">
+      <h2>this is the layout route</h2>
+    </div>
+  {{/burger.outlet}}
+{{/burger-menu}}
