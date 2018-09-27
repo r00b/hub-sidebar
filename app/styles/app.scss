@@ -17,3 +17,14 @@ body {
     float: none;
   }
 }
+
+.sidebar-tab-controls {
+  background-color: lightgray;
+  border: solid 2px darkgray;
+  border-left: 0;
+  display: inline-block;
+  // max-width: auto;
+  height: 120px;
+  transform: translate3d(500px, 0, 0);
+  visibility: visible;
+}
