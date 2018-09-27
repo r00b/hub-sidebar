@@ -7,3 +7,16 @@
     {{/each}}
   </div>
 </div>
+
+{{to-elsewhere named="side-panel-item"
+               send=(hash
+                 content=(component 'sidebar-title'
+                   title='Welcome to the posts index')
+               )
+}}
+
+{{to-elsewhere named="side-panel-item"
+               send=(hash
+                 content=(component 'sidebar-nav')
+               )
+}}
