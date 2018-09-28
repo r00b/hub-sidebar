@@ -9,6 +9,8 @@ export default Controller.extend({
 
   currentRoute: reads('router.currentRouteName'),
 
+  sidebarToggleVisible: true,
+
   shouldShowGlobalNavBar: computed('currentRoute', function () {
     return this.get('currentRoute') !== 'layout';
   })
