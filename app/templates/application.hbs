@@ -1,6 +1,10 @@
+{{#from-elsewhere name="navbar" as |model|}}
+  {{component model.content}}
+{{/from-elsewhere}}
+
 {{#burger-menu
   open=sideBarIsOpen
-  animation='slide'
+  animation=animation
   dismissOnClick=false
   width=500
 as |burger|}}
@@ -56,6 +60,10 @@ as |burger|}}
         </div>
       </nav>
     {{/if}}
+
+    {{#multiple-from-elsewhere name="side-panel-outlet" as |model|}}
+      {{component model.content}}
+    {{/multiple-from-elsewhere}}
 
     {{outlet}}
   {{/burger.outlet}}

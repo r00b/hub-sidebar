@@ -4,7 +4,7 @@ export default Controller.extend({
 
   actions: {
     toggleSidebar() {
-      this.toggleProperty('sidebarIsOpen');
+      this.send('showSidebar');
     }
   }
 
