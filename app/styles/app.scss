@@ -18,6 +18,15 @@ body {
   }
 }
 
+body.layout {
+  .bm-outlet {
+    padding-top: 0;
+  }
+}
+.bm-outlet {
+  padding-top: 80px;
+}
+
 .sidebar-tab-controls {
   background-color: lightgray;
   border: solid 2px darkgray;
@@ -28,6 +37,8 @@ body {
 }
 
 .sidebar-content {
+  padding: 10px;
+  padding-right: 0;
   display: flex;
   justify-content: space-between;
 }
