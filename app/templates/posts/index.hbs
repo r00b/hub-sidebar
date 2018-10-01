@@ -1,9 +1,34 @@
-<div class="container">
-  <div class="list-group">
-    {{#each model as |item|}}
-      {{#link-to "posts.post" item class="list-group-item list-group-item-action"}}
-        <strong>{{item.title}}</strong>: {{item.body}}
-      {{/link-to}}
-    {{/each}}
-  </div>
-</div>
+{{#hub-sidebar as |sidebar|}}
+  {{!-- here we just declare the sidebar content --}}
+  {{#sidebar.sidebar}}
+    <div class="">
+      <h2>this is the sidebar content on the posts.index route</h2>
+      <ul>
+        <li>
+          {{link-to "Home" "index"}}
+        </li>
+
+        <li>
+          {{link-to "Posts" "posts"}}
+        </li>
+
+        <li>
+          {{link-to "Layout" "layout"}}
+        </li>
+      </ul>
+    </div>
+  {{/sidebar.sidebar}}
+
+  {{#sidebar.outlet}}
+    {{global-nav toggleSidebar=sidebar.actions.toggle}}
+    <div class="container">
+      <div class="list-group">
+        {{#each model as |item|}}
+          {{#link-to "posts.post" item class="list-group-item list-group-item-action"}}
+            <strong>{{item.title}}</strong>: {{item.body}}
+          {{/link-to}}
+        {{/each}}
+      </div>
+    </div>
+  {{/sidebar.outlet}}
+{{/hub-sidebar}}

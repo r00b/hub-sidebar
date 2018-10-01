@@ -1,12 +1,22 @@
-<div class="container">
-  <div class="card">
-    <div class="card-header">
-      {{model.title}}
+{{#hub-sidebar open=sidebarIsOpen as |sidebar|}}
+  {{!-- here we use a named outlet and render into it from the route renderTemplate function --}}
+  {{#sidebar.sidebar}}
+    {{outlet "sidebarContent"}}
+  {{/sidebar.sidebar}}
+
+  {{#sidebar.outlet}}
+    {{global-nav toggleSidebar=sidebar.actions.toggle}}
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          {{model.title}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{model.body}}</p>
+          {{#link-to "posts" class="btn btn-link"}}&lt; Back to posts{{/link-to}}
+          <button type="button" class="btn btn-primary" {{action 'updateSidebar'}}>Update sidebar content</button>
+        </div>
+      </div>
     </div>
-    <div class="card-body">
-      <p class="card-text">{{model.body}}</p>
-      {{#link-to "posts" class="btn btn-link"}}&lt; Back to posts{{/link-to}}
-      <button type="button" class="btn btn-primary" {{action 'updateSidebar'}}>Update sidebar content</button>
-    </div>
-  </div>
-</div>
+  {{/sidebar.outlet}}
+{{/hub-sidebar}}

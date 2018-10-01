@@ -1,9 +1,17 @@
-<div class="container">
-  <div class="jumbotron">
-    <h1 class="display-4">Hub Sidebar</h1>
-    <p class="lead">Prototyping global nav + sidebar for Hub.</p>
-    <hr class="my-4">
-    <p>This is the base app without a sidebar.</p>
-  </div>
-  {{outlet}}
-</div>
+{{#hub-sidebar as |sidebar|}}
+  {{!-- this usage will cause it to render the default sidebar content --}}
+  {{sidebar.sidebar}}
+
+  {{#sidebar.outlet}}
+    {{global-nav toggleSidebar=sidebar.actions.toggle}}
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Hub Sidebar</h1>
+        <p class="lead">Prototyping global nav + sidebar for Hub.</p>
+        <hr class="my-4">
+        <p>This is the base app without a sidebar.</p>
+      </div>
+      {{outlet}}
+    </div>
+  {{/sidebar.outlet}}
+{{/hub-sidebar}}

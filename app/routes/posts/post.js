@@ -9,7 +9,7 @@ export default Route.extend({
   renderTemplate () {
     this._super(...arguments);
     this.render('posts/sidebar', {
-      into: 'application',
+      into: 'posts.post',
       outlet: 'sidebarContent'
     })
   },
@@ -17,10 +17,10 @@ export default Route.extend({
   actions: {
     updateSidebar() {
       this.render('posts/sidebar2', {
-        into: 'application',
+        into: 'posts.post',
         outlet: 'sidebarContent'
       });
-      this.send('toggleSidebar');
+      return true;
     }
   }
 
