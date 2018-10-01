@@ -1,0 +1,11 @@
+{{!-- just yeild a hash consisting of the content component and the content component --}}
+{{yield (hash
+    sidebar=(component "hub-sidebar/sidebar-content" toggle=(action 'toggle'))
+    outlet=(component "hub-sidebar/sidebar-outlet")
+    actions=(hash
+      open=(action 'open')
+      close=(action 'close')
+      toggle=(action 'toggle')
+    )
+  )
+}}

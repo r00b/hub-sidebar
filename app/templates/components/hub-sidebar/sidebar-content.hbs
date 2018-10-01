@@ -1,0 +1,32 @@
+{{!-- close X at the top --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button {{action toggle}} class="close hub-sidebar-toggler">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</nav>
+
+<div class="sidebar-content">
+  {{!-- sidebar content here - if a block was supplied, we yield, otherwise show the default --}}
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    <ul>
+      <li>
+        {{link-to "Home" "index"}}
+      </li>
+
+      <li>
+        {{link-to "Posts" "posts"}}
+      </li>
+
+      <li>
+        {{link-to "Layout" "layout"}}
+      </li>
+    </ul>
+  {{/if}}
+
+  {{!-- this is the controls that hang off the right side of the sidebar - we could "contextualize" this too... --}}
+  <div class="sidebar-tab-controls">
+    <button type="button" class="btn btn-light" {{action toggle}}>&laquo;&raquo;</button>
+  </div>
+</div>

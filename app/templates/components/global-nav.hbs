@@ -1,0 +1,29 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Global Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <button {{action toggleSidebar}} class="btn btn-light">Menu</button>
+      </li>
+      <li class="nav-item">
+        {{#link-to 'index' class="nav-link"}}
+          Home <span class="sr-only">(current)</span>
+        {{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'posts' class="nav-link"}}
+          Posts
+        {{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'layout' class="nav-link"}}
+          Layout
+        {{/link-to}}
+      </li>
+    </ul>
+  </div>
+</nav>

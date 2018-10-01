@@ -4,10 +4,6 @@ export default Controller.extend({
 
   /*
     TODO:
-      - can it squish.... flexbox...
-      - use components + services
-        - global nav component
-        - sidebar content component
       - layout route is different
       - flexibly render content into it - components, named outlets, ember-elsewhere...
   */
@@ -16,7 +12,7 @@ export default Controller.extend({
 
   actions: {
     toggleSidebar () {
-      this.toggleProperty('sideBarIsOpen')
+      this.toggleProperty('sidebarIsOpen')
     }
   }
 
