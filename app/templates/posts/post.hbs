@@ -6,6 +6,7 @@
     <div class="card-body">
       <p class="card-text">{{model.body}}</p>
       {{#link-to "posts" class="btn btn-link"}}&lt; Back to posts{{/link-to}}
+      <button type="button" class="btn btn-primary" {{action 'updateSidebar'}}>Update sidebar content</button>
     </div>
   </div>
 </div>
