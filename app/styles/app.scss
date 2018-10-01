@@ -6,6 +6,11 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  &.layout {
+    .sidebar-outlet {
+      padding-top: 0;
+    }
+  }
 }
 
 .hub-sidebar {
@@ -72,11 +77,13 @@ body {
       transform: translate3d(0, 0, 0);
     }
 
-    .sidebar-outlet::after {
-      width: 100%;
-    	height: 100%;
-      opacity: 1;
-      transition: opacity $transition-duration;
+    &.show-underlay {
+      .sidebar-outlet::after {
+        width: 100%;
+      	height: 100%;
+        opacity: 1;
+        transition: opacity $transition-duration;
+      }
     }
 
     &.should-squish {
