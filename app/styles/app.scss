@@ -7,6 +7,9 @@ body {
   height: 100%;
   width: 100%;
   &.layout {
+    .sidebar-inner {
+      top: 56px;
+    }
     .sidebar-outlet {
       padding-top: 0;
     }
@@ -16,6 +19,8 @@ body {
 .hub-sidebar {
   $sidebar-width: 500px;
   $transition-duration: 0.33s;
+
+  position: relative;
 
   .sidebar-inner {
     background: #f8f9fa;
