@@ -10,7 +10,6 @@ export default Route.extend({
       controller: 'sidebar',
       model: { /*...*/ }
     });
-    debugger;
     this.render('globalnav', {
       into: 'application',
       outlet: 'globalNav',
