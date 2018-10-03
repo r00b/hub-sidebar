@@ -1,6 +1,9 @@
+import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 
 export default Route.extend({
+
+  sidebarService: service('sidebar'),
 
   renderTemplate () {
     this._super(...arguments);
@@ -21,10 +24,12 @@ export default Route.extend({
   actions: {
     willTransition () {
       // close the sidebar on transitions
-      this.controllerFor('application').set('sidebarIsOpen'), false;
+      this.get('sidebarService').closeSidebar();
+      // this.controllerFor('application').set('sidebarIsOpen'), false;
     },
     toggleSidebar () {
-      this.controllerFor('application').toggleProperty('sidebarIsOpen');
+      this.get('sidebarService').toggleSidebar();
+      // this.controllerFor('application').toggleProperty('sidebarIsOpen');
     }
   }
 

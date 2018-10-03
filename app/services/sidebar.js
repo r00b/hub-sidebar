@@ -6,6 +6,14 @@ export default Service.extend({
 
   toggleSidebar () {
     this.toggleProperty('isOpen');
+  },
+
+  openSidebar () {
+    this.set('isOpen', true);
+  },
+
+  closeSidebar () {
+    this.set('isOpen', false);
   }
 
 });

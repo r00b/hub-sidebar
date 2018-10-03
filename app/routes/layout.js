@@ -16,6 +16,12 @@ export default Route.extend({
       // controller: 'globalnav',
       // model: { /*...*/ }
     });
+    this.render('empty', {
+      into: 'application',
+      outlet: 'globalNav',
+      // controller: 'globalnav',
+      // model: { /*...*/ }
+    });
   },
 
 });
