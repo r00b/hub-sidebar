@@ -1,14 +1,15 @@
-{{#hub-sidebar open=sidebarIsOpen as |sidebar|}}
-  {{#if shouldShowGlobalNavBar}}
-    {{#sidebar.sidebar}}
-      {{outlet 'sidebarContent'}}
-    {{/sidebar.sidebar}}
-  {{/if}}
+{{outlet "topNav"}}
+
+{{#hub-sidebar open=sidebarService.isOpen as |sidebar|}}
+  {{#sidebar.sidebar}}
+    {{outlet "sidebarContent"}}
+  {{/sidebar.sidebar}}
 
   {{#sidebar.outlet}}
-    {{#if shouldShowGlobalNavBar}}
+    {{!-- {{#if shouldShowGlobalNavBar}}
       {{global-nav toggleSidebar=sidebar.actions.toggle}}
-    {{/if}}
+    {{/if}} --}}
+    {{outlet "globalNav"}}
     {{outlet}}
   {{/sidebar.outlet}}
 {{/hub-sidebar}}

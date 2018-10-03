@@ -4,10 +4,19 @@ export default Route.extend({
 
   renderTemplate () {
     this._super(...arguments);
-      this.render('sidebar', {
-        into: 'application',
-        outlet: 'sidebarContent'
-      })
+    this.render('sidebar', {
+      into: 'application',
+      outlet: 'sidebarContent',
+      controller: 'sidebar',
+      model: { /*...*/ }
+    });
+    debugger;
+    this.render('globalnav', {
+      into: 'application',
+      outlet: 'globalNav',
+      controller: 'globalnav',
+      model: { /*...*/ }
+    });
   },
 
   actions: {
